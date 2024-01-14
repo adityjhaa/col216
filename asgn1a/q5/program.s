@@ -40,7 +40,7 @@ proceed:
 	li a7, 64
 	li a0, 1
 	mv a1, t0
-	mv a2, t3
+	li a2, 1
 	ecall	
 	
 	li a7, 93
