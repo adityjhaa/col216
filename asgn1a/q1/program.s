@@ -21,7 +21,7 @@ _start:
 	addi a2, zero, 12
 	ecall
 	
-	#exit with call 0
+	#exit with exit-call 0
 	addi a7, zero, 93
 	addi a0, zero, 0
 	ecall
