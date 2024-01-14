@@ -8,22 +8,22 @@ entry:
 .text
 _start:
 	#print name
-	addi a7, zero, 64
-	addi a0, zero, 1
+	li a7, 64
+	li a0, 1
 	la a1, name
-	addi a2, zero, 11
+	li a2, 11
 	ecall
 	
 	#print entry
-	addi a7, zero, 64
-	addi a0, zero, 1
+	li a7, 64
+	li a0, 1
 	la a1, entry
-	addi a2, zero, 12
+	li a2, 12
 	ecall
 	
 	#exit with exit-call 0
-	addi a7, zero, 93
-	addi a0, zero, 0
+	li a7, 93
+	li a0, 0
 	ecall
 
 
