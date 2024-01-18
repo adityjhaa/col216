@@ -46,7 +46,7 @@ print:
 	li a7, 1
 	mv a0, t2
 	ecall #print the sum
-	
+	#2022CS11102
 	#exit with exit-call 0
 	li a7, 93
 	li a0, 0

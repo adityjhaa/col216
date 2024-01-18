@@ -50,7 +50,8 @@ exit:
 	la a1, endl
 	li a2, 1
 	ecall
-	
+	#2022CS11102
+	#exit with exit-call 0
 	li a7, 93
 	li a0, 0
 	ecall
