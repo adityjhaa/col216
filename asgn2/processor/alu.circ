@@ -106,43 +106,45 @@
     </tool>
     <tool lib="1" name="OR Gate"/>
   </toolbar>
-  <circuit name="L_4bitCLA_f6478cc7">
-    <a name="circuit" val="L_4bitCLA_f6478cc7"/>
-    <a name="clabel" val="4bitCL"/>
+  <circuit name="L_4bitCLA">
+    <a name="circuit" val="L_4bitCLA"/>
+    <a name="clabel" val="4bitCLA"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
-    <comp lib="0" loc="(1110,530)" name="Pin">
+    <a name="simulationFrequency" val="1.0"/>
+    <comp lib="0" loc="(1100,150)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="p"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(1170,530)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="c1"/>
       <a name="output" val="true"/>
     </comp>
-    <comp lib="0" loc="(1110,590)" name="Pin">
+    <comp lib="0" loc="(1170,590)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
+      <a name="label" val="c2"/>
       <a name="output" val="true"/>
     </comp>
-    <comp lib="0" loc="(1110,650)" name="Pin">
+    <comp lib="0" loc="(1170,650)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="c3"/>
       <a name="output" val="true"/>
     </comp>
-    <comp lib="0" loc="(1110,710)" name="Pin">
+    <comp lib="0" loc="(1170,710)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="c4"/>
       <a name="output" val="true"/>
     </comp>
-    <comp lib="0" loc="(1110,770)" name="Pin">
+    <comp lib="0" loc="(1170,770)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="c5"/>
-      <a name="output" val="true"/>
-    </comp>
-    <comp lib="0" loc="(120,160)" name="Pin">
-      <a name="appearance" val="classic"/>
-      <a name="facing" val="west"/>
-      <a name="label" val="p_d993ebb1"/>
       <a name="output" val="true"/>
     </comp>
     <comp lib="0" loc="(210,590)" name="Pin">
@@ -177,53 +179,45 @@
       <a name="appearance" val="classic"/>
       <a name="label" val="G4"/>
     </comp>
-    <comp lib="0" loc="(450,550)" name="Pin">
+    <comp lib="0" loc="(520,550)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="cin"/>
     </comp>
     <comp lib="0" loc="(980,340)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
-      <a name="label" val="g_b0806db0"/>
+      <a name="label" val="g"/>
       <a name="output" val="true"/>
     </comp>
-    <comp lib="1" loc="(1020,770)" name="OR Gate"/>
-    <comp lib="1" loc="(140,190)" name="AND Gate">
-      <a name="facing" val="west"/>
-    </comp>
-    <comp lib="1" loc="(490,250)" name="AND Gate">
-      <a name="label" val="p2g1"/>
-    </comp>
-    <comp lib="1" loc="(530,570)" name="AND Gate">
-      <a name="label" val="P1cin"/>
-    </comp>
-    <comp lib="1" loc="(570,260)" name="OR Gate"/>
-    <comp lib="1" loc="(600,590)" name="OR Gate">
-      <a name="label" val="c2"/>
-    </comp>
-    <comp lib="1" loc="(640,280)" name="AND Gate"/>
-    <comp lib="1" loc="(670,630)" name="AND Gate">
-      <a name="label" val="P2c2"/>
-    </comp>
-    <comp lib="1" loc="(730,300)" name="OR Gate"/>
-    <comp lib="1" loc="(740,650)" name="OR Gate"/>
-    <comp lib="1" loc="(810,690)" name="AND Gate">
-      <a name="label" val="P3c3"/>
-    </comp>
-    <comp lib="1" loc="(830,320)" name="AND Gate"/>
-    <comp lib="1" loc="(880,710)" name="OR Gate"/>
-    <comp lib="1" loc="(910,340)" name="OR Gate"/>
-    <comp lib="1" loc="(950,750)" name="AND Gate">
+    <comp lib="1" loc="(1010,750)" name="AND Gate">
       <a name="label" val="P4c4"/>
     </comp>
-    <wire from="(1020,770)" to="(1110,770)"/>
-    <wire from="(110,160)" to="(110,190)"/>
-    <wire from="(110,160)" to="(120,160)"/>
-    <wire from="(110,190)" to="(140,190)"/>
-    <wire from="(190,180)" to="(400,180)"/>
-    <wire from="(190,190)" to="(350,190)"/>
-    <wire from="(190,200)" to="(300,200)"/>
-    <wire from="(190,210)" to="(260,210)"/>
+    <comp lib="1" loc="(1080,770)" name="OR Gate"/>
+    <comp lib="1" loc="(490,240)" name="AND Gate">
+      <a name="label" val="p2g1"/>
+    </comp>
+    <comp lib="1" loc="(570,260)" name="OR Gate"/>
+    <comp lib="1" loc="(590,570)" name="AND Gate">
+      <a name="label" val="P1cin"/>
+    </comp>
+    <comp lib="1" loc="(640,280)" name="AND Gate"/>
+    <comp lib="1" loc="(660,590)" name="OR Gate"/>
+    <comp lib="1" loc="(700,150)" name="AND Gate">
+      <a name="inputs" val="4"/>
+    </comp>
+    <comp lib="1" loc="(730,300)" name="OR Gate"/>
+    <comp lib="1" loc="(730,630)" name="AND Gate">
+      <a name="label" val="P2c2"/>
+    </comp>
+    <comp lib="1" loc="(800,650)" name="OR Gate"/>
+    <comp lib="1" loc="(830,320)" name="AND Gate"/>
+    <comp lib="1" loc="(870,690)" name="AND Gate">
+      <a name="label" val="P3c3"/>
+    </comp>
+    <comp lib="1" loc="(910,340)" name="OR Gate"/>
+    <comp lib="1" loc="(940,710)" name="OR Gate"/>
+    <wire from="(1010,750)" to="(1030,750)"/>
+    <wire from="(1080,770)" to="(1170,770)"/>
     <wire from="(210,590)" to="(260,590)"/>
     <wire from="(210,610)" to="(280,610)"/>
     <wire from="(210,650)" to="(300,650)"/>
@@ -231,66 +225,69 @@
     <wire from="(210,710)" to="(350,710)"/>
     <wire from="(210,730)" to="(380,730)"/>
     <wire from="(210,770)" to="(400,770)"/>
-    <wire from="(210,790)" to="(430,790)"/>
-    <wire from="(260,210)" to="(260,590)"/>
-    <wire from="(260,590)" to="(480,590)"/>
-    <wire from="(280,240)" to="(280,610)"/>
-    <wire from="(280,240)" to="(440,240)"/>
-    <wire from="(280,610)" to="(550,610)"/>
-    <wire from="(300,200)" to="(300,260)"/>
+    <wire from="(210,790)" to="(420,790)"/>
+    <wire from="(260,130)" to="(260,590)"/>
+    <wire from="(260,130)" to="(650,130)"/>
+    <wire from="(260,590)" to="(540,590)"/>
+    <wire from="(280,220)" to="(280,610)"/>
+    <wire from="(280,220)" to="(440,220)"/>
+    <wire from="(280,610)" to="(610,610)"/>
+    <wire from="(300,140)" to="(300,260)"/>
+    <wire from="(300,140)" to="(650,140)"/>
     <wire from="(300,260)" to="(300,650)"/>
     <wire from="(300,260)" to="(440,260)"/>
-    <wire from="(300,650)" to="(620,650)"/>
+    <wire from="(300,650)" to="(680,650)"/>
     <wire from="(320,280)" to="(320,670)"/>
     <wire from="(320,280)" to="(520,280)"/>
-    <wire from="(320,670)" to="(690,670)"/>
-    <wire from="(350,190)" to="(350,300)"/>
+    <wire from="(320,670)" to="(750,670)"/>
+    <wire from="(350,160)" to="(350,300)"/>
+    <wire from="(350,160)" to="(650,160)"/>
     <wire from="(350,300)" to="(350,710)"/>
     <wire from="(350,300)" to="(590,300)"/>
-    <wire from="(350,710)" to="(760,710)"/>
+    <wire from="(350,710)" to="(820,710)"/>
     <wire from="(380,320)" to="(380,730)"/>
     <wire from="(380,320)" to="(680,320)"/>
-    <wire from="(380,730)" to="(830,730)"/>
-    <wire from="(400,180)" to="(400,340)"/>
+    <wire from="(380,730)" to="(890,730)"/>
+    <wire from="(400,170)" to="(400,340)"/>
+    <wire from="(400,170)" to="(650,170)"/>
     <wire from="(400,340)" to="(400,770)"/>
     <wire from="(400,340)" to="(780,340)"/>
-    <wire from="(400,770)" to="(900,770)"/>
-    <wire from="(430,360)" to="(430,790)"/>
-    <wire from="(430,360)" to="(860,360)"/>
-    <wire from="(430,790)" to="(970,790)"/>
-    <wire from="(440,550)" to="(450,550)"/>
-    <wire from="(450,550)" to="(470,550)"/>
-    <wire from="(470,530)" to="(1110,530)"/>
-    <wire from="(470,530)" to="(470,550)"/>
-    <wire from="(470,550)" to="(480,550)"/>
-    <wire from="(490,250)" to="(520,250)"/>
-    <wire from="(530,570)" to="(550,570)"/>
+    <wire from="(400,770)" to="(960,770)"/>
+    <wire from="(420,360)" to="(420,790)"/>
+    <wire from="(420,360)" to="(860,360)"/>
+    <wire from="(420,790)" to="(1030,790)"/>
+    <wire from="(490,240)" to="(520,240)"/>
+    <wire from="(520,550)" to="(530,550)"/>
+    <wire from="(530,530)" to="(1170,530)"/>
+    <wire from="(530,530)" to="(530,550)"/>
+    <wire from="(530,550)" to="(540,550)"/>
     <wire from="(570,260)" to="(590,260)"/>
-    <wire from="(590,260)" to="(590,270)"/>
-    <wire from="(600,590)" to="(610,590)"/>
-    <wire from="(610,590)" to="(1110,590)"/>
-    <wire from="(610,590)" to="(610,610)"/>
-    <wire from="(610,610)" to="(620,610)"/>
+    <wire from="(590,570)" to="(610,570)"/>
     <wire from="(640,280)" to="(680,280)"/>
-    <wire from="(670,630)" to="(690,630)"/>
+    <wire from="(660,590)" to="(670,590)"/>
+    <wire from="(670,590)" to="(1170,590)"/>
+    <wire from="(670,590)" to="(670,610)"/>
+    <wire from="(670,610)" to="(680,610)"/>
+    <wire from="(700,150)" to="(1100,150)"/>
     <wire from="(730,300)" to="(780,300)"/>
-    <wire from="(740,650)" to="(750,650)"/>
-    <wire from="(750,650)" to="(1110,650)"/>
-    <wire from="(750,650)" to="(750,670)"/>
-    <wire from="(750,670)" to="(760,670)"/>
-    <wire from="(810,690)" to="(830,690)"/>
+    <wire from="(730,630)" to="(750,630)"/>
+    <wire from="(800,650)" to="(810,650)"/>
+    <wire from="(810,650)" to="(1170,650)"/>
+    <wire from="(810,650)" to="(810,670)"/>
+    <wire from="(810,670)" to="(820,670)"/>
     <wire from="(830,320)" to="(860,320)"/>
-    <wire from="(880,710)" to="(890,710)"/>
-    <wire from="(890,710)" to="(1110,710)"/>
-    <wire from="(890,710)" to="(890,730)"/>
-    <wire from="(890,730)" to="(900,730)"/>
+    <wire from="(870,690)" to="(890,690)"/>
     <wire from="(910,340)" to="(980,340)"/>
-    <wire from="(950,750)" to="(970,750)"/>
+    <wire from="(940,710)" to="(950,710)"/>
+    <wire from="(950,710)" to="(1170,710)"/>
+    <wire from="(950,710)" to="(950,730)"/>
+    <wire from="(950,730)" to="(960,730)"/>
   </circuit>
-  <circuit name="L_4bitSum_7aad7e6b">
-    <a name="circuit" val="L_4bitSum_7aad7e6b"/>
+  <circuit name="L_4bitSum">
+    <a name="circuit" val="L_4bitSum"/>
     <a name="clabel" val="4bitSum"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="simulationFrequency" val="1.0"/>
     <comp lib="0" loc="(500,140)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="c0"/>
@@ -368,6 +365,7 @@
     <a name="circuit" val="PG"/>
     <a name="clabel" val="PG"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="simulationFrequency" val="1.0"/>
     <comp lib="0" loc="(230,330)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="x1"/>
@@ -497,10 +495,11 @@
     <wire from="(470,710)" to="(610,710)"/>
     <wire from="(470,780)" to="(610,780)"/>
   </circuit>
-  <circuit name="L_16bitAdder_6ae20f77">
-    <a name="circuit" val="L_16bitAdder_6ae20f77"/>
+  <circuit name="L_16bitAdder">
+    <a name="circuit" val="L_16bitAdder"/>
     <a name="clabel" val="16bitAdd"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="simulationFrequency" val="1.0"/>
     <comp lib="0" loc="(190,150)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="Cin"/>
@@ -544,11 +543,11 @@
       <a name="output" val="true"/>
       <a name="width" val="16"/>
     </comp>
-    <comp loc="(590,170)" name="L_4bitAdder_3ee60717"/>
-    <comp loc="(590,290)" name="L_4bitAdder_3ee60717"/>
-    <comp loc="(590,420)" name="L_4bitAdder_3ee60717"/>
-    <comp loc="(590,540)" name="L_4bitAdder_3ee60717"/>
-    <comp loc="(750,410)" name="L_4bitCLA_f6478cc7"/>
+    <comp loc="(590,170)" name="L_4bitAdder"/>
+    <comp loc="(590,290)" name="L_4bitAdder"/>
+    <comp loc="(590,420)" name="L_4bitAdder"/>
+    <comp loc="(590,540)" name="L_4bitAdder"/>
+    <comp loc="(750,410)" name="L_4bitCLA"/>
     <wire from="(190,150)" to="(610,150)"/>
     <wire from="(190,260)" to="(200,260)"/>
     <wire from="(220,180)" to="(560,180)"/>
@@ -749,10 +748,11 @@
     <wire from="(930,470)" to="(930,600)"/>
     <wire from="(950,400)" to="(960,400)"/>
   </circuit>
-  <circuit name="L_4bitAdder_3ee60717">
-    <a name="circuit" val="L_4bitAdder_3ee60717"/>
+  <circuit name="L_4bitAdder">
+    <a name="circuit" val="L_4bitAdder"/>
     <a name="clabel" val="4bitAdd"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="simulationFrequency" val="1.0"/>
     <comp lib="0" loc="(200,210)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="a1"/>
@@ -833,9 +833,8 @@
       <a name="output" val="true"/>
     </comp>
     <comp loc="(370,210)" name="PG"/>
-    <comp loc="(380,220)" name="PG"/>
-    <comp loc="(530,210)" name="L_4bitCLA_f6478cc7"/>
-    <comp loc="(630,300)" name="L_4bitSum_7aad7e6b"/>
+    <comp loc="(530,210)" name="L_4bitCLA"/>
+    <comp loc="(630,300)" name="L_4bitSum"/>
     <wire from="(200,210)" to="(340,210)"/>
     <wire from="(200,230)" to="(340,230)"/>
     <wire from="(200,250)" to="(340,250)"/>
@@ -848,20 +847,13 @@
     <wire from="(260,260)" to="(340,260)"/>
     <wire from="(260,280)" to="(340,280)"/>
     <wire from="(370,210)" to="(420,210)"/>
-    <wire from="(370,220)" to="(380,220)"/>
-    <wire from="(370,230)" to="(380,230)"/>
-    <wire from="(370,240)" to="(380,240)"/>
-    <wire from="(370,250)" to="(380,250)"/>
-    <wire from="(370,260)" to="(380,260)"/>
-    <wire from="(370,270)" to="(380,270)"/>
-    <wire from="(370,280)" to="(380,280)"/>
-    <wire from="(380,220)" to="(500,220)"/>
-    <wire from="(380,230)" to="(410,230)"/>
-    <wire from="(380,240)" to="(500,240)"/>
-    <wire from="(380,250)" to="(400,250)"/>
-    <wire from="(380,260)" to="(500,260)"/>
-    <wire from="(380,270)" to="(390,270)"/>
-    <wire from="(380,280)" to="(500,280)"/>
+    <wire from="(370,220)" to="(500,220)"/>
+    <wire from="(370,230)" to="(410,230)"/>
+    <wire from="(370,240)" to="(500,240)"/>
+    <wire from="(370,250)" to="(400,250)"/>
+    <wire from="(370,260)" to="(500,260)"/>
+    <wire from="(370,270)" to="(390,270)"/>
+    <wire from="(370,280)" to="(500,280)"/>
     <wire from="(390,270)" to="(390,350)"/>
     <wire from="(390,270)" to="(500,270)"/>
     <wire from="(390,350)" to="(600,350)"/>
@@ -896,11 +888,11 @@
     <wire from="(630,320)" to="(660,320)"/>
     <wire from="(630,330)" to="(710,330)"/>
   </circuit>
-  <circuit name="L_32bitAdder_1c50d512">
+  <circuit name="L_32bitAdder">
     <a name="appearance" val="custom"/>
-    <a name="circuit" val="L_32bitAdder_1c50d512"/>
-    <a name="clabel" val="add"/>
+    <a name="circuit" val="L_32bitAdder"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="simulationFrequency" val="1.0"/>
     <appear>
       <path d="M61,51 Q65,61 69,51" fill="none" stroke="#808080" stroke-width="2"/>
       <rect fill="none" height="30" stroke="#000000" stroke-width="2" width="30" x="50" y="50"/>
@@ -1067,8 +1059,8 @@
     <comp lib="1" loc="(970,610)" name="AND Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp loc="(390,190)" name="L_16bitAdder_6ae20f77"/>
-    <comp loc="(390,270)" name="L_16bitAdder_6ae20f77"/>
+    <comp loc="(390,190)" name="L_16bitAdder"/>
+    <comp loc="(390,270)" name="L_16bitAdder"/>
     <wire from="(160,190)" to="(250,190)"/>
     <wire from="(160,280)" to="(250,280)"/>
     <wire from="(270,200)" to="(360,200)"/>
@@ -1120,9 +1112,10 @@
     <wire from="(910,600)" to="(940,600)"/>
     <wire from="(970,610)" to="(1010,610)"/>
   </circuit>
-  <circuit name="L_32bitOR_f5a0fff7">
-    <a name="circuit" val="L_32bitOR_f5a0fff7"/>
+  <circuit name="L_32bitOR">
+    <a name="circuit" val="L_32bitOR"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="simulationFrequency" val="1.0"/>
     <comp lib="0" loc="(240,180)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="A"/>
@@ -1152,9 +1145,10 @@
     <wire from="(310,250)" to="(360,250)"/>
     <wire from="(430,230)" to="(460,230)"/>
   </circuit>
-  <circuit name="L_32bitAND_1f608d0c">
-    <a name="circuit" val="L_32bitAND_1f608d0c"/>
+  <circuit name="L_32bitAND">
+    <a name="circuit" val="L_32bitAND"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="simulationFrequency" val="1.0"/>
     <comp lib="0" loc="(200,140)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="A"/>
@@ -1184,9 +1178,10 @@
     <wire from="(270,210)" to="(330,210)"/>
     <wire from="(400,190)" to="(430,190)"/>
   </circuit>
-  <circuit name="L_32bitXOR_02cf327a">
-    <a name="circuit" val="L_32bitXOR_02cf327a"/>
+  <circuit name="L_32bitXOR">
+    <a name="circuit" val="L_32bitXOR"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="simulationFrequency" val="1.0"/>
     <comp lib="0" loc="(240,190)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="A"/>
@@ -1219,6 +1214,7 @@
   <circuit name="Mult">
     <a name="circuit" val="Mult"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="simulationFrequency" val="1.0"/>
     <comp lib="0" loc="(350,400)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="B"/>
@@ -1250,6 +1246,7 @@
   <circuit name="Mulhu">
     <a name="circuit" val="Mulhu"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="simulationFrequency" val="1.0"/>
     <comp lib="0" loc="(220,240)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="A"/>
@@ -1448,8 +1445,8 @@
     <comp lib="3" loc="(500,400)" name="Multiplier">
       <a name="width" val="32"/>
     </comp>
-    <comp loc="(720,380)" name="L_32bitAdder_1c50d512"/>
-    <comp loc="(730,440)" name="L_32bitAdder_1c50d512"/>
+    <comp loc="(720,380)" name="L_32bitAdder"/>
+    <comp loc="(730,440)" name="L_32bitAdder"/>
     <wire from="(220,240)" to="(250,240)"/>
     <wire from="(220,340)" to="(260,340)"/>
     <wire from="(270,230)" to="(310,230)"/>
@@ -1508,15 +1505,16 @@
     <wire from="(730,440)" to="(780,440)"/>
     <wire from="(740,380)" to="(740,420)"/>
   </circuit>
-  <circuit name="Shifter_Left_f8a7ce90">
-    <a name="circuit" val="Shifter_Left_f8a7ce90"/>
+  <circuit name="Shifter_Left">
+    <a name="circuit" val="Shifter_Left"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="simulationFrequency" val="1.0"/>
     <comp lib="0" loc="(400,440)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="B"/>
       <a name="width" val="32"/>
     </comp>
-    <comp lib="0" loc="(470,270)" name="Pin">
+    <comp lib="0" loc="(420,270)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="A"/>
       <a name="width" val="32"/>
@@ -1543,22 +1541,23 @@
       <a name="width" val="32"/>
     </comp>
     <wire from="(400,440)" to="(470,440)"/>
-    <wire from="(470,270)" to="(600,270)"/>
+    <wire from="(420,270)" to="(600,270)"/>
     <wire from="(500,300)" to="(510,300)"/>
     <wire from="(510,300)" to="(550,300)"/>
     <wire from="(550,290)" to="(550,300)"/>
     <wire from="(550,290)" to="(600,290)"/>
     <wire from="(640,280)" to="(720,280)"/>
   </circuit>
-  <circuit name="Shifter_Right_36e8bb3c">
-    <a name="circuit" val="Shifter_Right_36e8bb3c"/>
+  <circuit name="Shifter_Right">
+    <a name="circuit" val="Shifter_Right"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="simulationFrequency" val="1.0"/>
     <comp lib="0" loc="(400,440)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="B"/>
       <a name="width" val="32"/>
     </comp>
-    <comp lib="0" loc="(470,270)" name="Pin">
+    <comp lib="0" loc="(420,270)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="A"/>
       <a name="width" val="32"/>
@@ -1586,22 +1585,23 @@
       <a name="width" val="32"/>
     </comp>
     <wire from="(400,440)" to="(470,440)"/>
-    <wire from="(470,270)" to="(600,270)"/>
+    <wire from="(420,270)" to="(600,270)"/>
     <wire from="(500,300)" to="(510,300)"/>
     <wire from="(510,300)" to="(550,300)"/>
     <wire from="(550,290)" to="(550,300)"/>
     <wire from="(550,290)" to="(600,290)"/>
     <wire from="(640,280)" to="(720,280)"/>
   </circuit>
-  <circuit name="signed_sra_d8f4319a">
-    <a name="circuit" val="signed_sra_d8f4319a"/>
+  <circuit name="signed_sra">
+    <a name="circuit" val="signed_sra"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="simulationFrequency" val="1.0"/>
     <comp lib="0" loc="(400,440)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="B"/>
       <a name="width" val="32"/>
     </comp>
-    <comp lib="0" loc="(470,270)" name="Pin">
+    <comp lib="0" loc="(430,270)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="A"/>
       <a name="width" val="32"/>
@@ -1629,7 +1629,7 @@
       <a name="width" val="32"/>
     </comp>
     <wire from="(400,440)" to="(470,440)"/>
-    <wire from="(470,270)" to="(600,270)"/>
+    <wire from="(430,270)" to="(600,270)"/>
     <wire from="(500,300)" to="(510,300)"/>
     <wire from="(510,300)" to="(550,300)"/>
     <wire from="(550,290)" to="(550,300)"/>
@@ -1639,6 +1639,7 @@
   <circuit name="subtract">
     <a name="circuit" val="subtract"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="simulationFrequency" val="1.0"/>
     <comp lib="0" loc="(170,280)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="A"/>
@@ -1659,9 +1660,6 @@
     <comp lib="3" loc="(360,340)" name="Subtractor">
       <a name="width" val="32"/>
     </comp>
-    <comp lib="3" loc="(370,350)" name="Subtractor">
-      <a name="width" val="32"/>
-    </comp>
     <wire from="(170,280)" to="(280,280)"/>
     <wire from="(170,410)" to="(280,410)"/>
     <wire from="(280,280)" to="(280,330)"/>
@@ -1673,6 +1671,7 @@
   <circuit name="compare">
     <a name="circuit" val="compare"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="simulationFrequency" val="1.0"/>
     <comp lib="0" loc="(210,260)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="A"/>
@@ -1710,6 +1709,7 @@
   <circuit name="mulh">
     <a name="circuit" val="mulh"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="simulationFrequency" val="1.0"/>
     <comp lib="0" loc="(310,290)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="A"/>
@@ -1742,6 +1742,7 @@
   <circuit name="mux">
     <a name="circuit" val="mux"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="simulationFrequency" val="1.0"/>
     <comp lib="0" loc="(150,260)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="A"/>
@@ -1784,9 +1785,10 @@
     <wire from="(400,320)" to="(430,320)"/>
     <wire from="(480,300)" to="(560,300)"/>
   </circuit>
-  <circuit name="L_2dec_479c4fda">
-    <a name="circuit" val="L_2dec_479c4fda"/>
+  <circuit name="L_2dec">
+    <a name="circuit" val="L_2dec"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="simulationFrequency" val="1.0"/>
     <comp lib="0" loc="(200,90)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="facing" val="south"/>
@@ -1889,9 +1891,10 @@
     <wire from="(560,170)" to="(560,260)"/>
     <wire from="(560,170)" to="(660,170)"/>
   </circuit>
-  <circuit name="L_3dec_3dd928be">
-    <a name="circuit" val="L_3dec_3dd928be"/>
+  <circuit name="L_3dec">
+    <a name="circuit" val="L_3dec"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="simulationFrequency" val="1.0"/>
     <comp lib="0" loc="(200,160)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="A"/>
@@ -1975,8 +1978,8 @@
     <comp lib="1" loc="(560,600)" name="AND Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp loc="(290,240)" name="L_2dec_479c4fda"/>
-    <comp loc="(390,240)" name="L_2dec_479c4fda"/>
+    <comp loc="(290,240)" name="L_2dec"/>
+    <comp loc="(390,240)" name="L_2dec"/>
     <wire from="(200,160)" to="(270,160)"/>
     <wire from="(200,190)" to="(280,190)"/>
     <wire from="(200,340)" to="(270,340)"/>
@@ -2041,9 +2044,10 @@
     <wire from="(560,560)" to="(590,560)"/>
     <wire from="(560,600)" to="(590,600)"/>
   </circuit>
-  <circuit name="L_4dec_892604e7">
-    <a name="circuit" val="L_4dec_892604e7"/>
+  <circuit name="L_4dec">
+    <a name="circuit" val="L_4dec"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="simulationFrequency" val="1.0"/>
     <comp lib="0" loc="(150,120)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="A"/>
@@ -2141,8 +2145,8 @@
       <a name="output" val="true"/>
     </comp>
     <comp lib="1" loc="(220,310)" name="NOT Gate"/>
-    <comp loc="(290,260)" name="L_3dec_3dd928be"/>
-    <comp loc="(530,260)" name="L_3dec_3dd928be"/>
+    <comp loc="(290,260)" name="L_3dec"/>
+    <comp loc="(530,260)" name="L_3dec"/>
     <wire from="(150,120)" to="(250,120)"/>
     <wire from="(150,160)" to="(240,160)"/>
     <wire from="(150,200)" to="(230,200)"/>
@@ -2217,9 +2221,9 @@
     <wire from="(610,260)" to="(610,550)"/>
     <wire from="(610,550)" to="(650,550)"/>
   </circuit>
-  <circuit name="alu">
+  <circuit name="alucirc">
     <a name="appearance" val="custom"/>
-    <a name="circuit" val="alu"/>
+    <a name="circuit" val="alucirc"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
     <a name="simulationFrequency" val="1.0"/>
     <appear>
@@ -2234,7 +2238,7 @@
       <circ-port dir="out" pin="820,80" x="80" y="60"/>
     </appear>
     <comp lib="0" loc="(1230,620)" name="Pin">
-      <a name="appearance" val="classic"/>
+      <a name="appearance" val="NewPins"/>
       <a name="facing" val="west"/>
       <a name="label" val="Result"/>
       <a name="output" val="true"/>
@@ -2268,12 +2272,12 @@
       <a name="incoming" val="4"/>
     </comp>
     <comp lib="0" loc="(160,420)" name="Pin">
-      <a name="appearance" val="classic"/>
+      <a name="appearance" val="NewPins"/>
       <a name="label" val="A"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(160,820)" name="Pin">
-      <a name="appearance" val="classic"/>
+      <a name="appearance" val="NewPins"/>
       <a name="label" val="B"/>
       <a name="width" val="32"/>
     </comp>
@@ -2339,77 +2343,61 @@
       <a name="mode" val="unsigned"/>
       <a name="width" val="32"/>
     </comp>
-    <comp loc="(1060,190)" name="L_32bitOR_f5a0fff7"/>
-    <comp loc="(1060,510)" name="L_32bitOR_f5a0fff7"/>
-    <comp loc="(1060,830)" name="L_32bitOR_f5a0fff7"/>
-    <comp loc="(1130,350)" name="L_32bitOR_f5a0fff7"/>
-    <comp loc="(1130,920)" name="L_32bitOR_f5a0fff7"/>
-    <comp loc="(1190,620)" name="L_32bitOR_f5a0fff7"/>
+    <comp loc="(1060,190)" name="L_32bitOR"/>
+    <comp loc="(1060,510)" name="L_32bitOR"/>
+    <comp loc="(1060,830)" name="L_32bitOR"/>
+    <comp loc="(1130,350)" name="L_32bitOR"/>
+    <comp loc="(1130,920)" name="L_32bitOR"/>
+    <comp loc="(1190,620)" name="L_32bitOR"/>
     <comp loc="(1380,410)" name="mux">
       <a name="facing" val="south"/>
     </comp>
-    <comp loc="(230,580)" name="L_4dec_892604e7">
+    <comp loc="(230,580)" name="L_4dec">
       <a name="label" val="dec"/>
     </comp>
-    <comp loc="(690,1020)" name="L_32bitAND_1f608d0c"/>
-    <comp loc="(690,140)" name="L_32bitAND_1f608d0c"/>
-    <comp loc="(690,170)" name="L_32bitAND_1f608d0c"/>
-    <comp loc="(690,220)" name="L_32bitAND_1f608d0c"/>
-    <comp loc="(690,250)" name="L_32bitAND_1f608d0c"/>
-    <comp loc="(690,300)" name="L_32bitAND_1f608d0c"/>
-    <comp loc="(690,330)" name="L_32bitAND_1f608d0c"/>
-    <comp loc="(690,380)" name="L_32bitAND_1f608d0c"/>
-    <comp loc="(690,410)" name="L_32bitAND_1f608d0c"/>
-    <comp loc="(690,460)" name="L_32bitAND_1f608d0c"/>
-    <comp loc="(690,490)" name="L_32bitAND_1f608d0c"/>
-    <comp loc="(690,540)" name="L_32bitAND_1f608d0c"/>
-    <comp loc="(690,570)" name="L_32bitAND_1f608d0c"/>
-    <comp loc="(690,60)" name="L_32bitAND_1f608d0c"/>
-    <comp loc="(690,620)" name="L_32bitAND_1f608d0c"/>
-    <comp loc="(690,650)" name="L_32bitAND_1f608d0c"/>
-    <comp loc="(690,700)" name="L_32bitAND_1f608d0c"/>
-    <comp loc="(690,730)" name="L_32bitAND_1f608d0c"/>
-    <comp loc="(690,780)" name="L_32bitAND_1f608d0c"/>
-    <comp loc="(690,810)" name="L_32bitAND_1f608d0c"/>
-    <comp loc="(690,860)" name="L_32bitAND_1f608d0c"/>
-    <comp loc="(690,890)" name="L_32bitAND_1f608d0c"/>
-    <comp loc="(690,90)" name="L_32bitAND_1f608d0c"/>
-    <comp loc="(690,940)" name="L_32bitAND_1f608d0c"/>
-    <comp loc="(690,970)" name="L_32bitAND_1f608d0c"/>
-    <comp loc="(790,150)" name="Shifter_Left_f8a7ce90">
-      <a name="label" val="sll"/>
-    </comp>
-    <comp loc="(790,230)" name="compare">
-      <a name="label" val="slt"/>
-    </comp>
-    <comp loc="(790,310)" name="L_32bitXOR_02cf327a">
-      <a name="label" val="xor"/>
-    </comp>
-    <comp loc="(790,390)" name="Shifter_Right_36e8bb3c">
-      <a name="label" val="srl"/>
-    </comp>
-    <comp loc="(790,470)" name="L_32bitOR_f5a0fff7">
-      <a name="label" val="or"/>
-    </comp>
-    <comp loc="(790,550)" name="L_32bitAND_1f608d0c">
-      <a name="label" val="and"/>
-    </comp>
+    <comp loc="(690,1020)" name="L_32bitAND"/>
+    <comp loc="(690,140)" name="L_32bitAND"/>
+    <comp loc="(690,170)" name="L_32bitAND"/>
+    <comp loc="(690,220)" name="L_32bitAND"/>
+    <comp loc="(690,250)" name="L_32bitAND"/>
+    <comp loc="(690,300)" name="L_32bitAND"/>
+    <comp loc="(690,330)" name="L_32bitAND"/>
+    <comp loc="(690,380)" name="L_32bitAND"/>
+    <comp loc="(690,410)" name="L_32bitAND"/>
+    <comp loc="(690,460)" name="L_32bitAND"/>
+    <comp loc="(690,490)" name="L_32bitAND"/>
+    <comp loc="(690,540)" name="L_32bitAND"/>
+    <comp loc="(690,570)" name="L_32bitAND"/>
+    <comp loc="(690,60)" name="L_32bitAND"/>
+    <comp loc="(690,620)" name="L_32bitAND"/>
+    <comp loc="(690,650)" name="L_32bitAND"/>
+    <comp loc="(690,700)" name="L_32bitAND"/>
+    <comp loc="(690,730)" name="L_32bitAND"/>
+    <comp loc="(690,780)" name="L_32bitAND"/>
+    <comp loc="(690,810)" name="L_32bitAND"/>
+    <comp loc="(690,860)" name="L_32bitAND"/>
+    <comp loc="(690,890)" name="L_32bitAND"/>
+    <comp loc="(690,90)" name="L_32bitAND"/>
+    <comp loc="(690,940)" name="L_32bitAND"/>
+    <comp loc="(690,970)" name="L_32bitAND"/>
+    <comp loc="(790,150)" name="Shifter_Left"/>
+    <comp loc="(790,230)" name="compare"/>
+    <comp loc="(790,310)" name="L_32bitXOR"/>
+    <comp loc="(790,390)" name="Shifter_Right"/>
+    <comp loc="(790,470)" name="L_32bitOR"/>
+    <comp loc="(790,550)" name="L_32bitAND"/>
     <comp loc="(790,630)" name="Mult"/>
-    <comp loc="(790,70)" name="L_32bitAdder_1c50d512"/>
+    <comp loc="(790,70)" name="L_32bitAdder"/>
     <comp loc="(790,710)" name="mulh"/>
     <comp loc="(790,790)" name="Mulhu"/>
-    <comp loc="(790,870)" name="subtract">
-      <a name="label" val="sub"/>
-    </comp>
-    <comp loc="(790,950)" name="signed_sra_d8f4319a">
-      <a name="label" val="sra"/>
-    </comp>
-    <comp loc="(970,110)" name="L_32bitOR_f5a0fff7"/>
-    <comp loc="(970,270)" name="L_32bitOR_f5a0fff7"/>
-    <comp loc="(970,430)" name="L_32bitOR_f5a0fff7"/>
-    <comp loc="(970,590)" name="L_32bitOR_f5a0fff7"/>
-    <comp loc="(970,750)" name="L_32bitOR_f5a0fff7"/>
-    <comp loc="(970,910)" name="L_32bitOR_f5a0fff7"/>
+    <comp loc="(790,870)" name="subtract"/>
+    <comp loc="(790,950)" name="signed_sra"/>
+    <comp loc="(970,110)" name="L_32bitOR"/>
+    <comp loc="(970,270)" name="L_32bitOR"/>
+    <comp loc="(970,430)" name="L_32bitOR"/>
+    <comp loc="(970,590)" name="L_32bitOR"/>
+    <comp loc="(970,750)" name="L_32bitOR"/>
+    <comp loc="(970,910)" name="L_32bitOR"/>
     <wire from="(1010,110)" to="(1010,190)"/>
     <wire from="(1010,190)" to="(1030,190)"/>
     <wire from="(1010,200)" to="(1010,270)"/>
@@ -2713,9 +2701,10 @@
     <wire from="(970,750)" to="(1010,750)"/>
     <wire from="(970,910)" to="(1010,910)"/>
   </circuit>
-  <circuit name="main">
-    <a name="circuit" val="main"/>
+  <circuit name="alu">
+    <a name="circuit" val="alu"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="simulationFrequency" val="1.0"/>
     <comp lib="0" loc="(190,190)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="A"/>
@@ -2750,7 +2739,7 @@
       <a name="label" val="Zero"/>
       <a name="output" val="true"/>
     </comp>
-    <comp loc="(260,240)" name="alu"/>
+    <comp loc="(260,240)" name="alucirc"/>
     <wire from="(190,190)" to="(210,190)"/>
     <wire from="(190,250)" to="(230,250)"/>
     <wire from="(190,310)" to="(210,310)"/>
