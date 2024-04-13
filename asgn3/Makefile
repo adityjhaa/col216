@@ -9,22 +9,19 @@ INC_PATH := include
 
 TARGET := cacheSim
 
-SRC := $(wildcard $(SRC_PATH)/*.cpp)
-OBJ := $(patsubst $(SRC_PATH)/%.cpp,$(OBJ_PATH)/%.o,$(SRC))
-INC := $(wildcard $(INC_PATH)/*.h*)
-
-some :
-	$(OBJ)
-
+SRC := $(foreach x, $(SRC_PATH), $(wildcard $(addprefix $(x)/*,.c*)))
+OBJ := $(foreach x, $(OBJ_PATH), $(wildcard $(addprefix $(x)/*,.o)))
+INC := $(foreach x, $(INC_PATH), $(wildcard $(addprefix $(x)/*,.h*)))
 
 all : $(TARGET)
 
-$(TARGET) : $(OBJ)
-	$(CC) -o $@ $^ $(CFLAGS)
+$(TARGET) : obj
+	$(CC) -o $@ $(OBJ) $(CFLAGS)
 
 
-$(OBJ) : $(SRC) $(INC)
-	$(CC) -c $< -o $@ $(CFLAGS)
+obj : $(SRC) $(INC)
+	$(CC) -c $(SRC) $(CFLAGS)
+	@mv *.o $(OBJ_PATH)
 
 
 clean :
