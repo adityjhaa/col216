@@ -7,6 +7,7 @@
 - <a href="https://github.com/adityjha0/col216/tree/main/asgn0">*Assignment 0*</a> : Shift & Add *Vs* Booth's multiplier in VHDL
 - <a href="https://github.com/adityjha0/col216/tree/main/asgn1">*Assignment 1*</a> : Basic RISC-V Assembly programs
 - <a href="https://github.com/adityjha0/col216/tree/main/asgn2">*Assignment 2*</a> : Building a Processor
+- <a href="https://github.com/adityjha0/col216/tree/main/asgn3">*Assignment 3*</a> : Cache Simulator
 
 
 <hr>
