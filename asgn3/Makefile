@@ -10,17 +10,18 @@ INC_PATH := include
 TARGET := cacheSim
 
 SRC := $(foreach x, $(SRC_PATH), $(wildcard $(addprefix $(x)/*,.c*)))
-OBJ := $(foreach x, $(OBJ_PATH), $(wildcard $(addprefix $(x)/*,.o)))
+OBJ := $(foreach x, $(SRC), $(OBJ_PATH)/$(notdir $(basename $(x))).o)
 INC := $(foreach x, $(INC_PATH), $(wildcard $(addprefix $(x)/*,.h*)))
 
+.PHONY: all
 all : $(TARGET)
 
 $(TARGET) : obj
-	$(CC) -o $@ $(OBJ) $(CFLAGS)
+	$(CC) $(CFLAGS) -o $@ $(OBJ)
 
-
+.PHONY: obj
 obj : $(SRC) $(INC)
-	$(CC) -c $(SRC) $(CFLAGS)
+	$(CC) $(CFLAGS) -c $(SRC)
 	@mv *.o $(OBJ_PATH)
 
 
