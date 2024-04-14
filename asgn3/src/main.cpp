@@ -41,7 +41,6 @@ int main(int argc, const char *argv[])
     string s;
     char c;
     ull a;
-    int d;
 
     while (cin >> s)
     {
@@ -52,8 +51,7 @@ int main(int argc, const char *argv[])
             cin >> s;
             a = stoi(s, nullptr, 16);
             cin >> s;
-            d = stoi(s);
-            cache.store(a, d);
+            cache.store(a);
             break;
         case 'l':
             cin >> s;
