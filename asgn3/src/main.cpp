@@ -1,18 +1,14 @@
-#include <iostream>
 #include "../include/cache.hpp"
 
-using std::cout, std::string, std::cin;
-
 // Required values
-int sets,
-    blocks,
-    bytes,
+ull sets,
+    blocks;
+
+int bytes,
     write_allocate,
     write_through,
     lru;
-
-// case specific
-int choose;
+int choose; // case specific
 
 int main(int argc, const char *argv[])
 {
@@ -39,15 +35,45 @@ int main(int argc, const char *argv[])
     else
         choose = 1; // m-way set-associative
 
+    Cache cache(sets, blocks, bytes, choose);
+    cache.set_policies(write_through, write_allocate, lru);
+
     string s;
+    char c;
+    ull a;
+    int d;
 
     while (cin >> s)
     {
-        cout << s <<" ";
-        cin >> s;
-        cout << s << "\n";
-        cin >>s;
+        c = s[0];
+        switch (c)
+        {
+        case 's':
+            cin >> s;
+            a = stoi(s, nullptr, 16);
+            cin >> s;
+            d = stoi(s);
+            cache.store(a, d);
+            break;
+        case 'l':
+            cin >> s;
+            a = stoi(s, nullptr, 16);
+            cin >> s;
+            cache.load(a);
+            break;
+        default:
+            puts("Operation is neither store nor load! ERROR!\n");
+            return 1;
+        }
     }
+
+    cout << "Total loads: " << cache.loads << "\n"
+         << "Total stores: " << cache.stores << "\n"
+         << "Load hits: " << cache.hits.first << "\n"
+         << "Load misses: " << cache.misses.first << "\n"
+         << "Store hits: " << cache.hits.second << "\n"
+         << "Store misses: " << cache.misses.second << "\n"
+         << "Total cycles: " << cache.cylces << "\n";
 
     return 0;
 }

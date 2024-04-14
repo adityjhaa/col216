@@ -1,5 +1,64 @@
 #include "../include/cache.hpp"
 
-Cache::Cache() {}
+Block::Block() {}
 
-Cache::~Cache() {}
+Block::Block(bool v, ull t, int n)
+{
+    this->valid = v;
+    this->tag = t;
+    this->nbytes = n;
+
+    data.reserve(nbytes);
+}
+
+Cache::Cache(ull sets, ull blocks, int bytes, int config)
+{
+    this->sets = sets;
+    this->blocks = blocks;
+    this->bytes = bytes;
+    this->config = config;
+
+    loads = stores = 0;
+    hits = misses = {0, 0};
+    cylces = 0;
+
+    int c = log2(bytes);
+
+    cache = new Block *[sets];
+    for (ull i = 0; i < sets; ++i)
+    {
+        cache[i] = new Block[blocks];
+        for (ull j = 0; j < blocks; ++j)
+        {
+            cache[i][j] = Block(false, 0, c);
+        }
+    }
+}
+
+Cache::~Cache()
+{
+    for (ull i = 0; i < sets; ++i)
+    {
+        delete[] cache[i];
+    }
+
+    delete[] cache;
+    cache = nullptr;
+}
+
+void Cache::set_policies(int wt, int wa, int lr)
+{
+    this->write_through = wt;
+    this->write_allocate = wa;
+    this->lru = lr;
+}
+
+void Cache::store(ull adr, int data)
+{
+    stores++;
+}
+
+void Cache::load(ull adr)
+{
+    loads++;
+}
