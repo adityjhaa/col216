@@ -52,13 +52,13 @@ int main(int argc, const char *argv[])
         {
         case 's':
             cin >> s;
-            a = stoi(s, nullptr, 16);
+            a = stoull(s, nullptr, 16);
             cin >> s;
             cache.store(a);
             break;
         case 'l':
             cin >> s;
-            a = stoi(s, nullptr, 16);
+            a = stoull(s, nullptr, 16);
             cin >> s;
             cache.load(a);
             break;

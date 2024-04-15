@@ -46,7 +46,6 @@ Cache::~Cache()
     delete[] cache;
     delete[] fifo;
     delete[] lru_cnt;
-    cache = nullptr;
 }
 
 void Cache::set_policies(bool wt, bool wa, bool lr)
@@ -125,7 +124,7 @@ void Cache::store(ull adr)
     }
     else
     {
-        cylces += 99;
+        cylces += 100;
     }
 }
 
@@ -167,27 +166,27 @@ void Cache::load(ull adr)
             }
             return;
         }
+    }
+    
+    ull e;
+    if (lru)
+    {
+        ull a = lru_cnt[index].back();
+        e = a;
+        lru_cnt[index].pop_back();
+        cache[index][a].tag = tag;
+        lru_cnt[index].push_front(a);
+    }
+    else
+    {
+        e = fifo[index];
+        cache[index][fifo[index]].tag = tag;
+        fifo[index] = (1 + fifo[index]) % blocks;
+    }
 
-        ull e;
-        if (lru)
-        {
-            ull a = lru_cnt[index].back();
-            e =a;
-            lru_cnt[index].pop_back();
-            cache[index][a].tag = tag;
-            lru_cnt[index].push_front(a);
-        }
-        else
-        {
-            e = fifo[index];
-            cache[index][fifo[index]].tag = tag;
-            fifo[index] = (1 + fifo[index]) % blocks;
-        }
-
-        if(cache[index][e].dirty and (!write_through))
-        {
-            cylces += 100;
-            cache[index][e].dirty = false;
-        }
+    if (cache[index][e].dirty and (!write_through))
+    {
+        cylces += 100;
+        cache[index][e].dirty = false;
     }
 }

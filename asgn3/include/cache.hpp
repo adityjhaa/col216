@@ -8,12 +8,12 @@
 using std::cout,
     std::cin,
     std::endl,
-    std::stoi,
+    std::stoull,
     std::string,
     std::pair,
     std::list;
 
-#define ull unsigned long long int
+#define ull unsigned long long
 
 struct Line
 {
@@ -37,6 +37,7 @@ class Cache
     // policies
     bool write_through, write_allocate, lru;
 
+    // track lru & fifo
     ull *fifo;
     list<ull> *lru_cnt;
 
