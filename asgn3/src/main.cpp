@@ -1,14 +1,17 @@
 #include "../include/cache.hpp"
 
-// Required values
+// Configuration of cache
 ull sets,
     blocks;
+int bytes;
 
-int bytes,
-    write_allocate,
-    write_through,
-    lru;
-int choose; // case specific
+int choose;          // associacitivity
+                     // direct-mapping -> 0
+                     // fully-associative -> 1
+                     // set-associative -> 2
+bool write_allocate, // write-allocate -> 1, no-write-allocate -> 0
+    write_through,   // write-through -> 1, write-back -> 0
+    lru;             // lru -> 1, fifo -> 0
 
 int main(int argc, const char *argv[])
 {
@@ -24,16 +27,16 @@ int main(int argc, const char *argv[])
     blocks = atoi(argv[2]);
     bytes = atoi(argv[3]);
 
-    ((string)(argv[4]) == "write-allocate") ? write_allocate = 1 : write_allocate = 0;
-    ((string)argv[5] == "write-through") ? write_through = 1 : write_through = 0;
-    ((string)argv[6] == "lru") ? lru = 1 : lru = 0;
+    ((string)(argv[4]) == "write-allocate") ? write_allocate = true : write_allocate = false;
+    ((string)argv[5] == "write-through") ? write_through = true : write_through = false;
+    ((string)argv[6] == "lru") ? lru = true : lru = false;
 
     if (blocks == 1)
         choose = 0; // direct mapping
     else if (sets == 1)
-        choose = 2; // fully associative
+        choose = 1; // fully associative
     else
-        choose = 1; // m-way set-associative
+        choose = 2; // m-way set-associative
 
     Cache cache(sets, blocks, bytes, choose);
     cache.set_policies(write_through, write_allocate, lru);

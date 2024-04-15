@@ -1,12 +1,13 @@
 #include "../include/cache.hpp"
 
-Block::Block() {}
+Line::Line() {}
 
-Block::Block(bool v, ull t, int n)
+Line::Line(bool v, bool d, ull t, int n)
 {
     this->valid = v;
+    this->dirty = d;
     this->tag = t;
-    this->nbytes = n;
+    this->bytes = n;
 }
 
 Cache::Cache(ull sets, ull blocks, int bytes, int config)
@@ -20,15 +21,17 @@ Cache::Cache(ull sets, ull blocks, int bytes, int config)
     hits = misses = {0, 0};
     cylces = 0;
 
-    nbytes = log2(bytes);
-
-    cache = new Block *[sets];
+    cache = new Line *[sets];
+    fifo = new ull[sets];
+    lru_cnt = new list<ull>[sets];
     for (ull i = 0; i < sets; ++i)
     {
-        cache[i] = new Block[blocks];
+        cache[i] = new Line[blocks];
+        fifo[i] = 0;
+        lru_cnt[i] = {};
         for (ull j = 0; j < blocks; ++j)
         {
-            cache[i][j] = Block(false, 0, nbytes);
+            cache[i][j] = Line(false, false, 0, bytes);
         }
     }
 }
@@ -41,10 +44,12 @@ Cache::~Cache()
     }
 
     delete[] cache;
+    delete[] fifo;
+    delete[] lru_cnt;
     cache = nullptr;
 }
 
-void Cache::set_policies(int wt, int wa, int lr)
+void Cache::set_policies(bool wt, bool wa, bool lr)
 {
     this->write_through = wt;
     this->write_allocate = wa;
@@ -64,21 +69,63 @@ void Cache::store(ull adr)
         if (cache[index][i].tag == tag and cache[index][i].valid)
         {
             hits.second++;
+            if (write_through)
+                cylces += 100;
+            else
+                cache[index][i].dirty = true;
+
+            if (lru)
+            {
+                lru_cnt[index].remove(i);
+                lru_cnt[index].push_front(i);
+            }
             return;
         }
     }
 
     misses.second++;
-    cylces += 100 * (bytes / 4);
 
-    for (ull i = 0; i < blocks; ++i)
+    if (write_allocate)
     {
-        if (!cache[index][i].valid)
+        cylces += 100 * (bytes / 4);
+        for (ull i = 0; i < blocks; ++i)
         {
-            cache[index][i].valid = true;
-            cache[index][i].tag = tag;
-            return;
+            if (!cache[index][i].valid)
+            {
+                cache[index][i].valid = true;
+                cache[index][i].tag = tag;
+                if (write_through)
+                    cylces += 100;
+                else
+                    cache[index][i].dirty = true;
+                return;
+            }
         }
+
+        ull e;
+        if (lru)
+        {
+            ull a = lru_cnt[index].back();
+            e = a;
+            lru_cnt[index].pop_back();
+            cache[index][a].tag = tag;
+            lru_cnt[index].push_front(a);
+        }
+        else
+        {
+            e = fifo[index];
+            cache[index][fifo[index]].tag = tag;
+            fifo[index] = (1 + fifo[index]) % blocks;
+        }
+
+        if (cache[index][e].dirty and (!write_through))
+        {
+            cylces += 100;
+        }
+    }
+    else
+    {
+        cylces += 99;
     }
 }
 
@@ -95,6 +142,11 @@ void Cache::load(ull adr)
         if (cache[index][i].tag == tag and cache[index][i].valid)
         {
             hits.first++;
+            if (lru)
+            {
+                lru_cnt[index].remove(i);
+                lru_cnt[index].push_front(i);
+            }
             return;
         }
     }
@@ -108,7 +160,34 @@ void Cache::load(ull adr)
         {
             cache[index][i].valid = true;
             cache[index][i].tag = tag;
+            if (lru)
+            {
+                lru_cnt[index].remove(i);
+                lru_cnt[index].push_front(i);
+            }
             return;
+        }
+
+        ull e;
+        if (lru)
+        {
+            ull a = lru_cnt[index].back();
+            e =a;
+            lru_cnt[index].pop_back();
+            cache[index][a].tag = tag;
+            lru_cnt[index].push_front(a);
+        }
+        else
+        {
+            e = fifo[index];
+            cache[index][fifo[index]].tag = tag;
+            fifo[index] = (1 + fifo[index]) % blocks;
+        }
+
+        if(cache[index][e].dirty and (!write_through))
+        {
+            cylces += 100;
+            cache[index][e].dirty = false;
         }
     }
 }
