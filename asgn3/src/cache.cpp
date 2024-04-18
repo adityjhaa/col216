@@ -10,12 +10,11 @@ Line::Line(bool v, bool d, ull t, int n)
     this->bytes = n;
 }
 
-Cache::Cache(ull sets, ull blocks, int bytes, int config)
+Cache::Cache(ull sets, ull blocks, int bytes)
 {
     this->sets = sets;
     this->blocks = blocks;
     this->bytes = bytes;
-    this->config = config;
 
     loads = stores = 0;
     hits = misses = {0, 0};
@@ -69,7 +68,7 @@ void Cache::store(ull adr)
         {
             hits.second++;
             if (write_through)
-                cylces += 100;
+                cylces += 100 * bytes / 4;
             else
                 cache[index][i].dirty = true;
 
@@ -94,7 +93,7 @@ void Cache::store(ull adr)
                 cache[index][i].valid = true;
                 cache[index][i].tag = tag;
                 if (write_through)
-                    cylces += 100;
+                    cylces += 100 * (bytes / 4);
                 else
                     cache[index][i].dirty = true;
                 return;
@@ -104,11 +103,10 @@ void Cache::store(ull adr)
         ull e;
         if (lru)
         {
-            ull a = lru_cnt[index].back();
-            e = a;
+            ull a = e = lru_cnt[index].back();
+            lru_cnt[index].push_front(a);
             lru_cnt[index].pop_back();
             cache[index][a].tag = tag;
-            lru_cnt[index].push_front(a);
         }
         else
         {
@@ -116,15 +114,20 @@ void Cache::store(ull adr)
             cache[index][fifo[index]].tag = tag;
             fifo[index] = (1 + fifo[index]) % blocks;
         }
+        if (write_through)
+        {
+            cylces += 100 * (bytes / 4);
+            return;
+        }
 
         if (cache[index][e].dirty and (!write_through))
         {
-            cylces += 100;
+            cylces += 100 * (bytes / 4);
         }
     }
     else
     {
-        cylces += 100;
+        cylces += 100 * bytes / 4;
     }
 }
 
@@ -167,15 +170,14 @@ void Cache::load(ull adr)
             return;
         }
     }
-    
+
     ull e;
     if (lru)
     {
-        ull a = lru_cnt[index].back();
-        e = a;
+        ull a = e = lru_cnt[index].back();
+        lru_cnt[index].push_front(a);
         lru_cnt[index].pop_back();
         cache[index][a].tag = tag;
-        lru_cnt[index].push_front(a);
     }
     else
     {
@@ -186,7 +188,7 @@ void Cache::load(ull adr)
 
     if (cache[index][e].dirty and (!write_through))
     {
-        cylces += 100;
+        cylces += 100 * (bytes / 4);
         cache[index][e].dirty = false;
     }
 }

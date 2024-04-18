@@ -5,10 +5,6 @@ ull sets,
     blocks;
 int bytes;
 
-int choose;          // associacitivity
-                     // direct-mapping -> 0
-                     // fully-associative -> 1
-                     // set-associative -> 2
 bool write_allocate, // write-allocate -> 1, no-write-allocate -> 0
     write_through,   // write-through -> 1, write-back -> 0
     lru;             // lru -> 1, fifo -> 0
@@ -31,14 +27,7 @@ int main(int argc, const char *argv[])
     ((string)argv[5] == "write-through") ? write_through = true : write_through = false;
     ((string)argv[6] == "lru") ? lru = true : lru = false;
 
-    if (blocks == 1)
-        choose = 0; // direct mapping
-    else if (sets == 1)
-        choose = 1; // fully associative
-    else
-        choose = 2; // m-way set-associative
-
-    Cache cache(sets, blocks, bytes, choose);
+    Cache cache(sets, blocks, bytes);
     cache.set_policies(write_through, write_allocate, lru);
 
     string s;

@@ -1,8 +1,6 @@
 #pragma once
 
-#include <vector>
 #include <iostream>
-#include <cmath>
 #include <list>
 
 using std::cout,
@@ -32,7 +30,6 @@ class Cache
     ull sets;
     ull blocks;
     int bytes;
-    int config;
 
     // policies
     bool write_through, write_allocate, lru;
@@ -46,7 +43,7 @@ public:
     pair<ull, ull> hits, misses;
     ull cylces;
 
-    Cache(ull sets, ull blocks, int bytes, int config);
+    Cache(ull sets, ull blocks, int bytes);
     ~Cache();
     void set_policies(bool wt, bool wa, bool lr);
 
