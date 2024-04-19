@@ -1,3 +1,2 @@
 *.o
-cacheSim
-tracefile/*
+simulator/cacheSim
