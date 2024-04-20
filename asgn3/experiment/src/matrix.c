@@ -20,6 +20,25 @@ int **initialize(int n)
 	return a;
 }
 
+int **init0(int n)
+{
+	int **a;
+	
+	a = calloc(n, sizeof(int *));
+
+	for (int i = 0; i < n; i++)
+	{
+		a[i] = calloc(n, sizeof(int));
+		
+		for (int j = 0; j < n; j++)
+		{
+			a[i][j] = 0;
+		}
+	}
+
+	return a;
+}
+
 void freemat(int **mat, int n)
 {
 	for (int i = 0; i < n; i++)

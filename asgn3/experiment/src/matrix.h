@@ -6,6 +6,8 @@
 
 int **initialize(int n);
 
+int **init0(int n);
+
 void freemat(int **mat, int n);
 
 #endif
