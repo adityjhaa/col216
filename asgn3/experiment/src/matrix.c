@@ -11,7 +11,7 @@ int **initialize(int n)
 		a[i] = calloc(n, sizeof(int));
 		for (int j = 0; j < n; j++)
 		{
-			a[i][j] = rand() % 1000;
+			a[i][j] = rand() % 100;
 		}
 	}
 

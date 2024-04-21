@@ -16,7 +16,7 @@ void matmul(int **a, int **b, int **c, int n)
 
 // different ordered loops
 
-// 1
+// 1 : ijk
 
 void matmul1(int **a, int **b, int **c, int n)
 {
@@ -32,7 +32,7 @@ void matmul1(int **a, int **b, int **c, int n)
 	}
 }
 
-// 2
+// 2 : ikj
 
 void matmul2(int **a, int **b, int **c, int n)
 {
@@ -48,7 +48,7 @@ void matmul2(int **a, int **b, int **c, int n)
 	}
 }
 
-// 3
+// 3 : jik
 
 void matmul3(int **a, int **b, int **c, int n)
 {
@@ -64,7 +64,7 @@ void matmul3(int **a, int **b, int **c, int n)
 	}
 }
 
-// 4
+// 4 : jki
 
 void matmul4(int **a, int **b, int **c, int n)
 {
@@ -80,7 +80,7 @@ void matmul4(int **a, int **b, int **c, int n)
 	}
 }
 
-// 5
+// 5 : kij
 
 void matmul5(int **a, int **b, int **c, int n)
 {
@@ -96,7 +96,7 @@ void matmul5(int **a, int **b, int **c, int n)
 	}
 }
 
-// 6
+// 6 : kji
 
 void matmul6(int **a, int **b, int **c, int n)
 {
@@ -111,4 +111,3 @@ void matmul6(int **a, int **b, int **c, int n)
 		}
 	}
 }
-
