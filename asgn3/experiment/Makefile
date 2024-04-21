@@ -14,14 +14,14 @@ OBJ := $(foreach x, $(SRC), $(OBJ_PATH)/$(notdir $(basename $(x))).o)
 
 .PHONY : all
 
-all : $(TARGET)
+all : clean $(TARGET)
 
 $(TARGET) : obj
 	$(CC) $(CFLAGS) -o $@ $(OBJ)
 
 .PHONY: obj
 
-obj : $(SRC) $(INC)
+obj : $(SRC)
 	$(CC) $(CFLAGS) -c $(SRC)
 	@mv *.o $(OBJ_PATH)
 
