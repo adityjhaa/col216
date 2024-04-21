@@ -6,8 +6,6 @@ int **initialize(int n)
 
 	a = calloc(n, sizeof(int *));
 
-	srand(time(NULL));
-
 	for (int i = 0; i < n; i++)
 	{
 		a[i] = calloc(n, sizeof(int));
@@ -23,13 +21,13 @@ int **initialize(int n)
 int **init0(int n)
 {
 	int **a;
-	
+
 	a = calloc(n, sizeof(int *));
 
 	for (int i = 0; i < n; i++)
 	{
 		a[i] = calloc(n, sizeof(int));
-		
+
 		for (int j = 0; j < n; j++)
 		{
 			a[i][j] = 0;
@@ -37,6 +35,18 @@ int **init0(int n)
 	}
 
 	return a;
+}
+
+void printmat(int **mat, int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			printf("%d ", mat[i][j]);
+		}
+		printf("\n");
+	}
 }
 
 void freemat(int **mat, int n)
@@ -47,4 +57,3 @@ void freemat(int **mat, int n)
 	}
 	free(mat);
 }
-
