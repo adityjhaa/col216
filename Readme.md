@@ -13,9 +13,9 @@
 <hr>
 
 ### Course Text <br>
-- <a href="https://csciitd-my.sharepoint.com/:b:/g/personal/cs1221102_iitd_ac_in/EZsmlkR1l0VNnihPqfx6-G4BMF1Im1FEo432j9ZY5yya_A?e=luQG1Z">Computer Organization and Design (RISC-V Edition)</a> <br>
-- <a href="https://csciitd-my.sharepoint.com/:b:/g/personal/cs1221102_iitd_ac_in/Ed6gPA_PxStEqBRnYqVbyJYBkerb6h8Skj_ju1DUA3Qy-A?e=bMsysl">Computer Organization and Design</a> <br>
+- <a href="https://github.com/adityjhaa/books/computer_organization_&_design_riscV.pdf">Computer Organization and Design (RISC-V Edition)</a> <br>
+- <a href="https://github.com/adityjhaa/books/computer_organization_&_design.pdf">Computer Organization and Design</a> <br>
+- <a href="https://github.com/adityjhaa/books/riscV_isa.pdf">RISC-V ISA</a>
 - <a href="https://github.com/TheThirdOne/rars/wiki/Environment-Calls">RISC-V environment-calls</a><br>
-- <a href="https://csciitd-my.sharepoint.com/:b:/g/personal/cs1221102_iitd_ac_in/EZxjHb7ZEa1BmAv4YLsY6P0BqyLu0wtnekZJHlOhF6yaWA?e=9kJ7Ec">RISC-V ISA</a>
 
 <hr>
