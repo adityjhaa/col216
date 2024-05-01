@@ -12,7 +12,8 @@
 
 <hr>
 
-### Course Text <br>
+### Course Text
+
 - <a href="https://github.com/adityjhaa/col216/blob/main/books/computer_organization_%26_design_riscV.pdf">Computer Organization and Design (RISC-V Edition)</a> <br>
 - <a href="https://github.com/adityjhaa/col216/blob/main/books/computer_organization_%26_design.pdf">Computer Organization and Design</a> <br>
 - <a href="https://github.com/adityjhaa/col216/blob/main/books/riscV_isa.pdf">RISC-V ISA</a>
